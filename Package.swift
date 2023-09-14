@@ -14,10 +14,10 @@ let package = Package(
         .package(url: "https://source.skip.tools/skip-sql.git", from: "0.1.6"),
     ],
     targets: [
-    .target(name: "SkipData", dependencies: [.product(name: "SkipSQL", package: "skip-sql")), .product(name: "SkipModel", package: "skip-model"))], plugins: [.plugin(name: "skipstone", package: "skip")]),
+    .target(name: "SkipData", dependencies: [.product(name: "SkipSQL", package: "skip-sql"), .product(name: "SkipModel", package: "skip-model")], plugins: [.plugin(name: "skipstone", package: "skip")]),
     .testTarget(name: "SkipDataTests", dependencies: [
         "SkipData",
-        .product(name: "SkipTest", package: "skip"))
+        .product(name: "SkipTest", package: "skip")
     ], plugins: [.plugin(name: "skipstone", package: "skip")]),
     ]
 )
